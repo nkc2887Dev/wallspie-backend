@@ -2,6 +2,7 @@ import { Request, Response, NextFunction } from 'express';
 
 // Validate email format
 export const validateEmail = (email: string): boolean => {
+  email = email.trim();
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   return emailRegex.test(email);
 };
